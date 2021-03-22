@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Basket from './cart/Basket';
 import URL from '../../baseUrl/BaseUrl'
 import axios from 'axios'
-import { useGlobalState, useGlobalStateUpdate } from '../../context/globalContext'
+
 
 function Dashboard() {
 
