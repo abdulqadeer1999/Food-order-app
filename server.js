@@ -13,44 +13,6 @@ const fs = require('fs')
 const admin = require("firebase-admin");
 const multer = require('multer')
 
-// const storage = multer.diskStorage({ // https://www.npmjs.com/package/multer#diskstorage
-//     destination: './uploads/',
-//     filename: function (req, file, cb) {
-//         cb(null, `${new Date().getTime()}-${file.filename}.${file.mimetype.split("/")[1]}`)
-//     }
-// })
-
-// var upload = multer({ storage: storage })
-
-// var serviceAccount = {
-//     "type": "service_account",
-//     "project_id": "auth-production-9273f",
-//     "private_key_id": "3a701ad8ce8872913cc52d18ec71c8f6d2f6a20f",
-//     "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC6xzEsndh/VsCW\nO3idT2XmA9h8Mfh6YMVJ/vQmjV8CoKiYsH5xvdUufIBcRpWjXwRshA7JFiIk4sw/\nMM4YUe5X7CPbtLriCNQmwCYqak+3mG081Bku10tv2VTtQ31QWSTXKVuHBKIZii6T\nVz2cdomOmpdYni0n7w60b6A+Bvv+rmdMdkVeF8LNutuAWCl9anF9A6v8bVIpoUqI\nZ8EkooXgvW2Jk60OabIpw/cGuGnU4dh7UNhnNZitrKg1FqtDf1kK5UTrTSvToCj6\nyJ4WMsuQ9zYoHNtMR/u26YegXZhSHzl7CZkeQ3kKSuAGkwDRtOnuJN2xKIFV8mJt\npeK1td7pAgMBAAECggEAARx1l6fNogi/waworhfK8RDRA3JbxRMOh6MqjAJj9096\n7by6noNGttgyGtpubM0q6QOxcX3sVBQSOXEgVTOYd/U3IPPRTM5I3NKZYGqOKb47\nLlw9HFZW4/7mchw9rSsHCvg0WfhIFicIaQNS2tf+k/Mp8ADqrWldOrKvwM628Nom\n059HS1zKBZuuAAYvM9YBUwcYBeKADgKopnt1MAGCXcm+NYafToQTI3OGh0Fo+yHs\nzipjvxJCkcVJw6jpteCZ2rzgynLHQjj1HCUhLgt2moSierfGOG+z6Air5r1hByqR\nr9xhKIIOxzFtljYRY5kX69DLNPZAyewuv2nN/EH0EQKBgQDlz4GgiIEEKECCAnyh\nk9GU+2qRiOXL1FdN87toTyEw6g2xX7TPY5y2ixdAfFasvmQnwGg3i33Y6vQA9egq\ny92JsKulKTejLZFpDWlTm3H9X+xurKsHmdJ7HlgaOkbMdweaVHGyN2yMFYUhRici\nAt1lvdzNUEfVvkRLGtFcQABmNQKBgQDQEEGX8CmkoeFT7DDQDUgj+xX4LSYYo1IE\nAKYkzeXpYNZnNoeTTthx5lGISOiM8iXknWE1T7ZhQ29Yx/dAHNEwKRU8sH4ytPHJ\nfXKOgVWla/q7ETN9nhT58pSItLJX78jHy93H0tqat4Ak+t3MDxcoQHIk91/GsIDt\n7nIjfdjcZQKBgG3KezWEwY6I5Hi4U26mPkSc8MbizlZY9fTJ8sjctRC3YR9SiAFk\np6QWQ1+Nh6Mzuom7RI7014Tgiv5CfU6k4ww7GWXokSomRQgZXi6RXx4by8r8NyGE\nfahQUOsG2HgqjblPipoIHJW4WkgRSfTXxYor8Oct6YPWSK5Q+6DE+uvZAoGANwzW\nDhlhK0oZkFbh42pgOATrHyry9Xng7WYuj3Za6pDQqaZn4LXv1tMVp3WC8ifvlrl9\nStm4a6un/lmKNdBqGNAF6nTYLxppDuK+OK5HtukHAg/fC9GTwz5HxpPozBOJkDOE\njqZfaKg8o4wsux0TB3dlvBonoS56Lnn0gSd/BXECgYEA3V+CltYkiZJXjFkiLZIm\njeEZXOnkQzaCw7loJvZVBH5I7Z5ZRu3dlj3zWZFca4cwXlTQz4rTlD2WIM6Txl7k\nKG8T40LBslI0BJluNqVBk/BI6uY+PlgoQ0/fIpAoMK5zimxFS9IFWugn6f6rQzN3\nPR67p+zYrtvaKrQZd6QpUcM=\n-----END PRIVATE KEY-----\n",
-//     "client_email": "firebase-adminsdk-k9sh6@auth-production-9273f.iam.gserviceaccount.com",
-//     "client_id": "115976507707524993759",
-//     "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-//     "token_uri": "https://oauth2.googleapis.com/token",
-//     "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-//     "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-k9sh6%40auth-production-9273f.iam.gserviceaccount.com"
-//   }
-  
-
-// admin.initializeApp({
-//     credential: admin.credential.cert(serviceAccount),
-//     databaseURL: "https://auth-production-9273f-default-rtdb.firebaseio.com/"
-// });
-// const bucket = admin.storage().bucket("gs://auth-production-9273f.appspot.com/");
-
-// app.use(bodyParser.json());
-// app.use(cookieParser());
-
-// app.use(cors({
-//     origin: ['http://localhost:3000',"https://login-system-jahan.herokuapp.com/"],
-//     credentials: true
-// }));
-// app.use(morgan('dev'));
-// app.use("/", express.static(path.resolve(path.join(__dirname, "./web/build"))));
 
 
 const storage = multer.diskStorage({ // https://www.npmjs.com/package/multer#diskstorage
@@ -61,7 +23,7 @@ const storage = multer.diskStorage({ // https://www.npmjs.com/package/multer#dis
 })
 var upload = multer({ storage: storage })
 
-// const admin = require("firebase-admin");
+    // const admin = require("firebase-admin");
 // https://firebase.google.com/docs/storage/admin/start
 var serviceAccount =  // create service account from here: https://console.firebase.google.com/u/0/project/delete-this-1329/settings/serviceaccounts/adminsdk
 {
@@ -83,7 +45,7 @@ admin.initializeApp({
 });
 const bucket = admin.storage().bucket("gs://auth-production-89fa8.appspot.com");
 
- app.use(bodyParser.json());
+ app.use(express.json());
 app.use(cookieParser());
 
  app.use(cors({
@@ -179,8 +141,9 @@ app.post("/addProduct", upload.any(), (req, res, next) => {
                                         message: "Product add successfully",
                                         data: data
                                     })
-                                }).catch(() => {
-                                    console.log(err);
+                                }).catch((err) => {
+
+                                    console.log("error :" ,err);
                                     res.status(500).send({
                                         message: "user create error, " + err
                                     })

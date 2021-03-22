@@ -66,7 +66,7 @@ function Dashboard() {
             <div className="row1">
                 {hideCart === true ?
                     <main className="container">
-                        <h1 className="text-center mt-5 ">Products</h1>
+                        <h1 className="text-center mt-5 ">All Products</h1>
                         <div className="row">
                             {products.map((product) => (
                                 <div className="col-md-4 mt-5" key={product.id}>

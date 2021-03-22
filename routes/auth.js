@@ -5,7 +5,7 @@ var { foodUserModel, foodOtpModel, } = require('../dbconn/module')
 var router = express.Router();
 var SERVER_SECRET = process.env.SECRET || "1234";
 var postmark = require("postmark");
-var emailApi = process.env.EMAIL_API || "c1085f89-3538-4e2d-8751-faf7125765e6"; 
+var emailApi = process.env.EMAIL_API || "9cc2c15c-4f23-43b7-bd80-2bf7e466c83f"; 
 var client = new postmark.ServerClient(emailApi);
 
 router.post("/signup", (req, res, next) => {
@@ -162,7 +162,7 @@ router.post('/forget-password', (req, res, next) => {
                 otp: otp
             }).then((data) => {
                 client.sendEmail({
-                    "From": "asif_students@sysborg.com",
+                    "From": "asif_student@sysborg.com",
                     "To": req.body.email,
                     "Subject": "Reset Your Password",
                     "Textbody": `Here is your Reset password code : ${otp}`
