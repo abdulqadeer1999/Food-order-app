@@ -24,7 +24,7 @@ function Logout() {
     }
     return (
         <div>
-            <a className="text-success btn btn-outline-success mr-3" onClick={logout}>Logout<span className="sr-only">(current)</span></a>
+            <a className="text-success btn btn-outline-danger mr-3" onClick={logout}>Logout<span className="sr-only">(current)</span></a>
         </div>
     )
 }

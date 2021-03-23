@@ -38,7 +38,7 @@ function AdminDashboard() {
                     {
                         orderData.map((v, i) => {
                             return (
-                                <div className='col-md-5  mr-1 mt-4 py-3 px-3' style={{ boxShadow: "0 0 10px grey" }}>
+                                <div className='col-md-5  mr-1 mt-4 py-3 px-3' style={{ boxShadow: "0 0 10px dark" }}>
                                     <div>
                                         <span>Name:</span>
                                         <span className='float-right'>{v.name}</span>
@@ -72,7 +72,7 @@ function AdminDashboard() {
                                         <span className='float-right mt-2'>
                                             <button onClick={() => {
                                                 updateStatus(v._id)
-                                            }} >Confirm Order</button>
+                                            }} style= {{backgroundColor:"green"}} >Confirm Order</button>
                                         </span>
                                     </div>
                                 </div>

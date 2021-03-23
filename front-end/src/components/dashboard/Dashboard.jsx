@@ -53,7 +53,7 @@ function Dashboard() {
 
     return (
         <div>
-            <div className='bg-primary pt-3 pb-5 sticky-top'>
+            {/* <div className='bg-primary pt-3 pb-5 sticky-top'> */}
                 <div className="container">
                     <div className="col-md-12">
                         <a className="btn btn-light float-right"
@@ -62,7 +62,7 @@ function Dashboard() {
                         </a>
                     </div>
                 </div>
-            </div>
+            {/* </div> */}
             <div className="row1">
                 {hideCart === true ?
                     <main className="container">
@@ -75,7 +75,7 @@ function Dashboard() {
                                         <h3>{product.name}</h3>
                                         <div>PKR: {product.price}/- Per kg</div>
                                         <div>
-                                            <button onClick={() => onAdd(product)} className="btn btn-primary">Add To Cart</button>
+                                            <button onClick={() => onAdd(product)} className="btn btn-success">Add To Cart</button>
                                         </div>
                                     </div>
                                 </div>

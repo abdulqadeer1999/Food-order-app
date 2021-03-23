@@ -36,45 +36,57 @@ function AddProducts() {
     }
     console.log(msg)
     return (
+       
         <div>
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-md-6 mt-5">
-                        <form onSubmit={addProduct}>
-                            <div className="form-row">
-                                <div className="form-group col-md-6">
-                                    <label htmlFor="inputEmail4">Product Name</label>
-                                    <input type="text" className="form-control" id="pName" placeholder="Name" />
-                                </div>
-                                <div className="form-group col-md-6">
-                                    <label htmlFor="inputPassword4">Price</label>
-                                    <input type="number" className="form-control" id="price" placeholder="Price" />
-                                </div>
-                            </div>
-                            <div className="form-row">
-                                <div className="form-group col-md-6">
-                                    <label htmlFor="inputEmail4">Stock</label>
-                                    <input type="text" className="form-control" id="stock" placeholder="Stock" />
-                                </div>
-                                <div className="form-group col-md-6">
-                                    <label htmlFor="inputPassword4">Description</label>
-                                    <input type="text" className="form-control" id="description" placeholder="Description" />
-                                </div>
-                            </div>
-                            <div className="form-group">
-                                <div className="custom-file">
+            <div>
+        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" style = {{marginTop:"70px",marginLeft:"100px",textAlign:"center"}}>Add New Products</button>
+        <div className="modal fade" id="exampleModal" tabIndex={-1} role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">New Product  Details</h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <form onSubmit={addProduct}>
+                  <div className="form-group">
+                    <label htmlFor="recipient-name" className="col-form-label">Product Name</label>
+                    <input type="text" className="form-control" id="pName" />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="message-text" className="col-form-label">Price</label>
+                    <input type="number" className="form-control" id="price" placeholder="Price" />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="message-text" className="col-form-label">Stock</label>
+                    <input type="text" className="form-control" id="stock" placeholder="Stock" />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="message-text" className="col-form-label">Description</label>
+                    <input type="text" className="form-control" id="description" placeholder="Description" />
+                  </div>
+                  <div className="form-group">
+                         <div className="custom-file">
                                     <input type="file" className="custom-file-input" id="customFile" />
                                     <label className="custom-file-label" for="customFile">Choose Image</label>
-                                </div>
-                            </div>
-                            <button type="submit" className="btn btn-primary">Confirm Order</button>
-                        </form><br/>
-                        {msg ? <div class="alert alert-success" role="alert">
-                            {msg}
-                        </div> : null}
-                    </div>
-                </div>
+                                 </div>
+                         </div>
+                         <button type="submit" className="btn btn-primary">Add Product</button>
+                </form>
+                {msg ? <div class="alert alert-success" role="alert">
+                             {msg}
+                             </div> : null}
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                {/* <button type="button" className="btn btn-primary">Send message</button> */}
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
         </div>
     )
 }

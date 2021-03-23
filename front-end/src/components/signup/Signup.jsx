@@ -50,34 +50,45 @@ function Signup() {
 
     return (
 
+
         <div className="body">
             <div>
+
                 <div className='container'>
                     <div className='row justify-content-center'>
-                        <div className='col-md-5 form'>
+                        <div className='col-md-6 form'>
                             {change ? <div>
                                 <h1 className="text-center">Signup</h1>
-                                <form onSubmit={signup}>
+                                <form onSubmit={signup} className = "form1">
                                     <div className="form-col">
                                         <div className="col">
                                             <input type="text" className="form-control"
                                                 placeholder="Name" required id='name' />
+                                                <small id="emailHelp" className="form-text text-muted">We'll never share your Name with anyone else.</small>
                                         </div><br />
                                         <div className="col">
                                             <input type="email" className="form-control"
                                                 placeholder="Email" required id="email" />
+                                                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                                         </div><br />
                                         <div className="col">
                                             <input type="text" className="form-control"
                                                 placeholder="Phone" required id='phone' />
+                                                <small id="emailHelp" className="form-text text-muted">We'll never share your number with anyone else.</small>
                                         </div><br />
                                         <div className="col">
                                             <input type="password" className="form-control"
                                                 placeholder="Password" required id="password" />
+                                                <small id="emailHelp" className="form-text text-muted">We'll never share your password with anyone else.</small>
                                         </div><br />
+                                        <div className="form-check">
+                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                  <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
+                 </div>
                                         <div className="col">
                                             <button className='btn btn-primary'>Signup</button>
                                         </div><br/>
+                                  
                                         <div className="col">
                                             <p>Already have an account?
                                             <span onClick={handleClick}
@@ -104,6 +115,8 @@ function Signup() {
                 </div>
             </div>
         </div>
+
+
     )
 }
 

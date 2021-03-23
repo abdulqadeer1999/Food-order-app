@@ -2,12 +2,15 @@ import React from "react";
 import { Link } from 'react-router-dom'
 import { useGlobalState } from '../../context/globalContext'
 import Logout from './logout'
+import './Navbar.css'
+
 function Navbar() {
     const globalState = useGlobalState()
     return (
-        <div className='sticky-top'>
+        <div className='sticky-top' >
             <nav className="navbar  navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="#">Food</a>
+                <img src ="https://i.pinimg.com/originals/03/45/df/0345df122c914f3670b3a4214b7c18f1.jpg" width = "100px" height ="70px" />
+               
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon" />
                 </button>
@@ -21,6 +24,7 @@ function Navbar() {
                                 <li className="nav-item active">
                                     <Link className="nav-link" to="/myorders">My orders <span className="sr-only">(current)</span></Link>
                                 </li>
+                                
                             </ul>
                             <h3 className="mr-3">Welcome {globalState.user.name.charAt(0).toUpperCase() + globalState.user.name.slice(1)}</h3>
                             <Logout />
@@ -33,6 +37,8 @@ function Navbar() {
                                 <li className="nav-item active">
                                     <Link className="nav-link" to="/addproducts">Add Products <span className="sr-only">(current)</span></Link>
                                 </li>
+                        
+                
                             </ul>
                             <h3 className="mr-3">Welcome {globalState.user.name.charAt(0).toUpperCase() + globalState.user.name.slice(1)}</h3>
                             <Logout />

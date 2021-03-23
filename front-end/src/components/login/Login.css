@@ -1,6 +1,15 @@
-.form{
+/* .form{
     box-shadow: 0 0 10px grey;
     padding: 20px;
     margin-top: 50px;
    
+} */
+
+.btn-primary {
+    margin-right: 100px;
+}
+
+.form-group {
+    margin-top: 30px;
+    flex-wrap: wrap;
 }

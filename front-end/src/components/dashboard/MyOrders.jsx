@@ -22,7 +22,7 @@ function MyOrders() {
                     {
                         myOrder.map((v, i) => {
                             return (
-                                <div className='col-md-6 mr-2 mt-4 py-3 px-3' style={{boxShadow: "0 0 10px grey"}}>
+                                <div className='col-md-6 mr-2 mt-4 py-3 px-3' style={{boxShadow: "2 3 10px grey"}}>
                                     {
                                         v.orders.map((v, i) => {
                                             return (

@@ -17,3 +17,29 @@
 .col{
     text-align: center;
 } */
+
+
+.form1 {
+    box-shadow: inset;
+  width: auto;
+    background-color: aqua;
+}
+
+.btn-primary {
+    width: 150px;
+}
+
+.form-group,.form-check {
+    width: 300px;
+   margin-left: 40px;
+}
+
+.form-group {
+    align-items: center;
+    background-color: aquamarine;
+    color: dodgerblue;
+}
+.body {
+    background-color: forestgreen;
+  
+}

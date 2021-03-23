@@ -7,6 +7,7 @@ import { useGlobalState, useGlobalStateUpdate } from '../../context/globalContex
 import {
     useHistory
 } from "react-router-dom";
+
 function Login() {
     let [show, setShow] = useState()
     let history = useHistory()
@@ -43,34 +44,34 @@ function Login() {
         history.push("/forgetpw");
     }
     return (
+       
+        <div className="body">
         <div>
-            <div className='container'>
-                <div className='row justify-content-center'>
-                    <div className='col-md-5 form'>
-                        <h1 className="text-center">Login</h1>
-                        <form onSubmit={login}>
-                            <div className="form-col">
-                                <div className="col">
-                                    <input type="email" className="form-control"
-                                        placeholder="Email" required id="email" />
-                                </div><br />
-                                <div className="col">
-                                    <input type="password" className="form-control"
-                                        placeholder="Password" required id="password" />
-                                </div><br />
-                                <div className="col">
-                                    <button className='btn btn-primary' type="submit">Login</button>
-                                    <p className='mt-3' onClick={goToForget}
-                                        style={{ cursor: "pointer" }}>Forget Password</p>
-                                </div><br />
-                                {show ? <div className="alert alert-danger" role="alert">
-                                    {show}
-                                </div> : null}
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            
+      <form onSubmit={login}>
+        <div className="form-group">
+          <label htmlFor="exampleInputEmail1">Email address</label>
+          <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required />
+          <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div className="form-group">
+          <label htmlFor="exampleInputPassword1">Password</label>
+          <input type="password" className="form-control" id="password" placeholder="Password" required />
+          <small id="passwordHelp" className="form-text text-muted">We'll never share your password with anyone else.</small>
+        </div>
+        
+        <div className="col">
+        <button type="submit" className="btn btn-primary" style = {{marginLeft : "30px"}}>Login</button>
+        <p className='mt-3' onClick={goToForget}
+                                        style={{ cursor: "pointer" , margin:"30px" }}>Forget Password</p>
+                              </div><br />
+                             {show ? <div className="alert alert-danger" role="alert">
+                               {show}
+                              </div> : null}
+    
+       
+      </form>
+      </div>
         </div>
     )
 }
