@@ -49,7 +49,7 @@ const bucket = admin.storage().bucket("gs://auth-production-89fa8.appspot.com");
 app.use(cookieParser());
 
  app.use(cors({
-    origin: ['http://localhost:3000'],
+    origin: ['http://localhost:3000',"https://foodorder-app.herokuapp.com/"],
      credentials: true
  }));
  app.use(morgan('dev'));
